@@ -3,7 +3,7 @@
 {  StyledToolbar: a Toolbar with TStyledToolButtons inside                     }
 {  Based on TFlowPanel and TStyledGraphicButton                                }
 {                                                                              }
-{  Copyright (c) 2022-2025 (Ethea S.r.l.)                                      }
+{  Copyright (c) 2022-2026 (Ethea S.r.l.)                                      }
 {  Author: Carlo Barazzetta                                                    }
 {  Contributors: Lance Rasmussen                                               }
 {                                                                              }
@@ -288,6 +288,7 @@ type
     FInMenuLoop: Boolean;
     FAutoSize: Boolean;
     FButtonsCursor: TCursor;
+    FRescaling: Boolean;
 
     //Properties ignores (only for backward compatibility)
     FGradientDrawingOptions: TTBGradientDrawingOptions;
@@ -380,6 +381,7 @@ type
     procedure SetButtonsCursor(const AValue: TCursor);
     property DisableButtonAlign: Boolean read GetDisableButtonAlign write SetDisableButtonAlign;
   protected
+    procedure ChangeScale(M, D: Integer); override;
     {$IFDEF D10_1+}
     procedure ChangeScale(M, D: Integer; isDpiChange: Boolean); override;
     {$ENDIF}
@@ -767,8 +769,8 @@ begin
   LWidth := Width;
   if IsDropDown then
     LWidth := FToolBar.ButtonWidth + GetSplitButtonWidth;
-  LUpdateToolBar := (not RescalingButton)
-    and Assigned(FToolBar) and ((AWidth <> Width) or (AHeight <> Height))
+  LUpdateToolBar := Assigned(FToolBar) and not FToolBar.FRescaling
+    and ((AWidth <> Width) or (AHeight <> Height))
     and not IsSeparator
     and not (csLoading in ComponentState);
   inherited SetBounds(ALeft, ATop, AWidth, AHeight);
@@ -778,12 +780,12 @@ begin
     if AHeight <> LHeight then
     begin
       FToolBar.FButtonHeight := AHeight;
-      LUpdateToolbar := True;
+      LUpdateToolbar := not (sfHeight in ScalingFlags);
     end;
     if AWidth <> LWidth then
     begin
       FToolBar.FButtonWidth := AWidth;
-      LUpdateToolbar := True;
+      LUpdateToolbar := not (sfWidth in ScalingFlags);
     end;
     if LUpdateToolbar and (AWidth <> 0) and (AHeight <> 0) then
       FToolBar.ResizeButtons;
@@ -1117,12 +1119,27 @@ begin
   FCaptureChangeCancels := False;
 end;
 
+procedure TStyledToolbar.ChangeScale(M, D: Integer);
+begin
+  FRescaling := True;
+  try
+    inherited;
+  finally
+    FRescaling := True;
+  end;
+end;
+
 {$IFDEF D10_1+}
 procedure TStyledToolbar.ChangeScale(M, D: Integer; isDpiChange: Boolean);
 begin
-  FButtonWidth := MulDiv(FButtonWidth, M, D);
-  FButtonHeight := MulDiv(FButtonHeight, M, D);
-  inherited ChangeScale(M, D, isDpiChange);
+  FRescaling := True;
+  try
+    FButtonWidth := MulDiv(FButtonWidth, M, D);
+    FButtonHeight := MulDiv(FButtonHeight, M, D);
+    inherited ChangeScale(M, D, isDpiChange);
+  finally
+    FRescaling := True;
+  end;
 end;
 {$ENDIF}
 
