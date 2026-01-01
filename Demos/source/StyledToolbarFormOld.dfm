@@ -10,18 +10,20 @@ object fmStyledToolbar: TfmStyledToolbar
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OldCreateOrder = True
   ShowHint = True
   OnClick = ToolButtonclick
   OnCreate = FormCreate
+  PixelsPerInch = 96
   TextHeight = 15
   object ToolBar: TToolBar
     AlignWithMargins = True
     Left = 3
     Top = 71
     Width = 727
-    Height = 68
+    Height = 64
     AutoSize = True
-    ButtonHeight = 66
+    ButtonHeight = 62
     ButtonWidth = 77
     Caption = 'ToolBar Caption'
     Flat = False
@@ -101,7 +103,7 @@ object fmStyledToolbar: TfmStyledToolbar
       Left = 420
       Top = 0
       Width = 121
-      Height = 66
+      Height = 62
       TabOrder = 0
       Text = 'Edit1'
     end
@@ -246,7 +248,7 @@ object fmStyledToolbar: TfmStyledToolbar
     object BottomClientPanel: TPanel
       Left = 123
       Top = 1
-      Width = 613
+      Width = 609
       Height = 76
       Align = alClient
       BevelOuter = bvNone
@@ -333,9 +335,9 @@ object fmStyledToolbar: TfmStyledToolbar
   end
   object ClientPanel: TPanel
     Left = 0
-    Top = 142
+    Top = 138
     Width = 733
-    Height = 312
+    Height = 316
     Align = alClient
     TabOrder = 3
   end
@@ -371,7 +373,7 @@ object fmStyledToolbar: TfmStyledToolbar
     Left = 476
     Top = 274
     Bitmap = {
-      494C01011800B000180020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011800B0001C0020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

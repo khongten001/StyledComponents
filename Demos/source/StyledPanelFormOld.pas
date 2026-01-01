@@ -3,7 +3,7 @@
 {  StyledPanelDemo: a Demo to show StyledPanel                                 }
 {  with different Families (Classic, Bootstrap, Angular, Basic-Color, etc.)    }
 {                                                                              }
-{  Copyright (c) 2022-2025 (Ethea S.r.l.)                                      }
+{  Copyright (c) 2022-2026 (Ethea S.r.l.)                                      }
 {  Author: Carlo Barazzetta                                                    }
 {  Contributors: Claude Code                                                   }
 {                                                                              }

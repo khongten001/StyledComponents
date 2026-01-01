@@ -2,7 +2,7 @@
 {                                                                              }
 {  StyledTaskDialog: a Task Dialog Component with StyleButtons                 }
 {                                                                              }
-{  Copyright (c) 2022-2025 (Ethea S.r.l.)                                      }
+{  Copyright (c) 2022-2026 (Ethea S.r.l.)                                      }
 {  Author: Carlo Barazzetta                                                    }
 {  Contributors:                                                               }
 {                                                                              }
@@ -586,7 +586,10 @@ begin
     LTaskDialog.AutoClick := AutoClickDelay > 0;
     if LTaskDialog.AutoClick then
       LTaskDialog.AutoClickDelay := AutoClickDelay;
-    LTaskDialog.UseCommandLinks := UseCommandLinks;
+    if Buttons <> [TMsgDlgBtn.mbOK] then
+      LTaskDialog.UseCommandLinks := UseCommandLinks
+    else
+      LTaskDialog.UseCommandLinks := False;
     if UseAlternateTaskDlgFlags then
       LTaskDialog.Flags := AlternateTaskDlgFlags; //Replace the default Flags to AlternateTaskDlgFlags.
     // Assign buttons
@@ -595,7 +598,7 @@ begin
     for DlgBtn := Low(TMsgDlgBtn) to High(TMsgDlgBtn) do
     begin
       //Check for particular case using command links:
-      if UseCommandLinks then
+      if LTaskDialog.UseCommandLinks then
       begin
         //if mbYes and mbOK are both present with "UseCommandLinks", then tcbOk is used as CommonButton
         if (DlgBtn = TMsgDlgBtn.mbOK) and (DlgBtn in Buttons) and (TMsgDlgBtn.mbYes in Buttons) then
@@ -652,7 +655,7 @@ begin
         end;
 
         if LTaskDialogButtonItem.CommandLinkHint <> '' then
-          LCommandLinkPresent := UseCommandLinks;
+          LCommandLinkPresent := True;
 
         if DlgBtn = DefaultButton then
           LTaskDialogButtonItem.Default := True;

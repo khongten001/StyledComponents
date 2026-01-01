@@ -2,7 +2,7 @@
 
 ## Components similar to Delphi VCL Buttons, Panels, Toolbar, DbNavigator, BindNavigator, ButtonGroup and CategoryButtons with Custom Graphic Styles, and an advanced, full-customizable TaskDialog, also with animations!
 
-### Actual official version: 3.9.2
+### Actual official version: 3.9.3
 
 ---
 ## New Setup for Installation of Components
@@ -397,6 +397,10 @@ If you are have Skia4Delphi installed, you can also try the AnimatedTaskDialogDe
 Related links: [embarcadero.com](https://www.embarcadero.com) - [learndelphi.org](https://learndelphi.org)
 
 ### RELEASE NOTES
+01 Jan 2026 - version 3.9.3
+- Fixed Component Editor
+- Fixed CommandLink with only OK Button
+- Fixed ChangeScale of TStyledToolbar
 
 30 Nov 2025 - version 3.9.2
 - Added button customization properties to TStyledTaskDialog:

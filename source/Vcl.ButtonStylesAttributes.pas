@@ -4,7 +4,7 @@
 {  for Styled Components                                                       }
 {  TNotificationBadgeAttributes: a set of Rendering attributes for Badge       }
 {                                                                              }
-{  Copyright (c) 2022-2025 (Ethea S.r.l.)                                      }
+{  Copyright (c) 2022-2026 (Ethea S.r.l.)                                      }
 {  Author: Carlo Barazzetta                                                    }
 {  Contributors: Claude Code                                                   }
 {                                                                              }
@@ -56,7 +56,7 @@ uses
 
 const
   /// <summary>Current version of the StyledComponents library</summary>
-  StyledComponentsVersion = '3.9.2';
+  StyledComponentsVersion = '3.9.3';
   /// <summary>Default corner radius for rounded buttons in pixels</summary>
   DEFAULT_RADIUS = 6;
   /// <summary>Resource name for the Windows shield admin icon</summary>

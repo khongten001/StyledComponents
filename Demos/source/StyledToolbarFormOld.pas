@@ -3,7 +3,7 @@
 {  TStyledToolbar Test                                                         }
 {  Comparison TStyledToolbar with TToolBar                                     }
 {                                                                              }
-{  Copyright (c) 2022-2025 (Ethea S.r.l.)                                      }
+{  Copyright (c) 2022-2026 (Ethea S.r.l.)                                      }
 {  Author: Carlo Barazzetta                                                    }
 {  Contributors:                                                               }
 {                                                                              }
@@ -290,23 +290,27 @@ begin
 end;
 
 procedure TfmStyledToolbar.UpdateToolbars(Sender: TObject);
+var
+  LHeight, LWidth: Integer;
 begin
+  LHeight := Round(tbHeight.Position  * GetScaleFactor);
+  LWidth := Round(tbWidth.Position * GetScaleFactor);
   if Assigned(FStyledToolBar) then
   begin
     FStyledToolBar.Flat := FlatCheckBox.Checked;
     FStyledToolBar.ShowCaptions := ShowCaptionCheckBox.Checked;
-    FStyledToolBar.ButtonWidth := Round(tbWidth.Position * GetScaleFactor);
-    FStyledToolBar.ButtonHeight := Round(tbHeight.Position  * GetScaleFactor);
-    FStyledToolBar.Height := FStyledToolBar.ButtonHeight + 2;
+    FStyledToolBar.ButtonWidth := LWidth;
+    FStyledToolBar.ButtonHeight := LHeight;
+    FStyledToolBar.Height := LHeight + 2;
     FStyledToolBar.List := ListCheckBox.Checked;
   end;
   if Assigned(FToolBar) then
   begin
     FToolBar.Flat := FlatCheckBox.Checked;
     FToolBar.ShowCaptions := ShowCaptionCheckBox.Checked;
-    FToolBar.ButtonWidth := Round(tbWidth.Position * GetScaleFactor);
-    FToolBar.ButtonHeight := Round(tbHeight.Position  * GetScaleFactor);
-    FToolBar.Height := FToolBar.ButtonHeight + 2;
+    FToolBar.ButtonWidth := LWidth;
+    FToolBar.ButtonHeight := LHeight;
+    FToolBar.Height := LHeight + 2;
     FToolBar.List := ListCheckBox.Checked;
   end;
   ToolBar.List := ListCheckBox.Checked;
