@@ -237,7 +237,7 @@ begin
   if Sender is TToolButton then
     StyledShowMessage(TToolButton(Sender).Caption)
   else if Sender is TStyledNavButton then
-    EditStyledButton(TStyledNavButton(Sender));
+    EditStyledControl(TStyledNavButton(Sender));
 end;
 
 procedure TfmStyledDbNavigator.UpdateDbNav(Sender: TObject);
