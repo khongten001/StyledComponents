@@ -2,7 +2,7 @@
 
 ## Components similar to Delphi VCL Buttons, Panels, Toolbar, DbNavigator, BindNavigator, ButtonGroup and CategoryButtons with Custom Graphic Styles, and an advanced, full-customizable TaskDialog, also with animations!
 
-### Actual official version: 4.0.0
+### Actual official version: 4.1.0
 
 ---
 ## New Setup for Installation of Components
@@ -397,6 +397,15 @@ If you are have Skia4Delphi installed, you can also try the AnimatedTaskDialogDe
 Related links: [embarcadero.com](https://www.embarcadero.com) - [learndelphi.org](https://learndelphi.org)
 
 ### RELEASE NOTES
+11 Apr 2026 - version 4.1.0
+- Added support for new VCLStyle of Delphi 13.1:
+  > - Windows Modern
+  > - Windows Modern Dark
+  > - Windows Modern SlateGray
+  > - Windows Modern Green
+  > - Windows Modern Blue
+  > - Windows Modern Purple
+
 23 Feb 2026 - version 4.0.0
 - Fixed Component Editor for TStyledPanel
 - Fixed StyledPanel component: default Windows Color, ParentBackground

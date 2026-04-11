@@ -196,7 +196,7 @@ uses
   , Vcl.StyledTaskDialog
   , Vcl.StandardButtonStyles
   , Vcl.StyledCmpStrUtils
-  {$IFDEF DXE7+}
+  {$IFDEF SKIA}
   , AnimatedButtonsForm
   {$ENDIF}
   {$IFDEF D10_3+}
