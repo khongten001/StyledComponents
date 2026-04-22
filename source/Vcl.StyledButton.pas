@@ -1840,6 +1840,19 @@ type
     property OnMouseUp;
     property OnStartDock;
     property OnStartDrag;
+    property ParentBiDiMode;
+    property ParentCustomHint;
+    property ParentDoubleBuffered;
+    property ParentFont;
+    property ParentShowHint;
+    property PopupMenu;
+    property PressedImageIndex;
+    property SelectedImageIndex;
+    {$IFDEF D10_4+}
+    property PressedImageName;
+    property SelectedImageName;
+    {$ENDIF}
+    property ShowHint;
 
     //StyledComponents Attributes
     property StyleRadius;

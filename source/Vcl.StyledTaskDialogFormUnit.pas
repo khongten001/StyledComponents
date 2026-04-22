@@ -1434,9 +1434,12 @@ end;
 
 procedure TStyledTaskDialogForm.PlayMessageDlgSound;
 const
-  Sounds: array [TMsgDlgType] of integer = (
-    MB_ICONEXCLAMATION, MB_ICONHAND, MB_OK,
-    MB_ICONQUESTION, MB_ICONASTERISK);
+  Sounds: array[TMsgDlgType] of Integer = (
+    MB_ICONEXCLAMATION, // mtWarning
+    MB_ICONHAND,        // mtError
+    MB_ICONASTERISK,    // mtInformation
+    MB_ICONASTERISK,    // mtConfirmation: MB_ICONQUESTION because is muted on Vista+
+    MB_OK);             // mtCustom
 begin
   MessageBeep(Sounds[FDialogType]);
 end;
@@ -1683,13 +1686,13 @@ begin
         ['Skia.Vcl.StyledTaskDialogAnimatedUnit.pas'])
     else
     begin
-      LForm := _AnimatedTaskDialogFormClass.Create(LOwnerForm);
+      LForm := _AnimatedTaskDialogFormClass.Create(nil);
       TStyledTaskDialogForm(LForm).AnimationLoop := ATaskDialog.UseAnimationLoop;
       TStyledTaskDialogForm(LForm).AnimationInverse := ATaskDialog.UseAnimationInverse;
     end;
   end
   else
-    LForm := _TaskDialogFormClass.Create(LOwnerForm);
+    LForm := _TaskDialogFormClass.Create(nil);
   try
     LForm.PopupParent := LOwnerForm;
     //Call event handler OnDialogConstructed
