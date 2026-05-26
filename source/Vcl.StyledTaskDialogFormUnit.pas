@@ -1,4 +1,4 @@
-{******************************************************************************}
+﻿{******************************************************************************}
 {                                                                              }
 {  StyledTaskDialogForm: a Task Dialog Form with StyleButtons                  }
 {                                                                              }
@@ -1170,8 +1170,6 @@ var
     begin
       AControl.Top := LTop+1;
       Inc(LTop, AControl.Height);
-//      if AControl.AlignWithMargins then
-//        Inc(LTop, AControl.Margins.Top + AControl.Margins.Bottom);
     end;
   end;
 
@@ -1683,7 +1681,7 @@ begin
     if not AnimatedTaskDialogFormRegistered then
       raise EStyledTaskDialogException.CreateFmt(
         ERR_DIALOG_FORM_NOT_REGISTERED,
-        ['Skia.Vcl.StyledTaskDialogAnimatedUnit.pas'])
+        ['Skia.Vcl.StyledTaskDialogAnimatedUnit'])
     else
     begin
       LForm := _AnimatedTaskDialogFormClass.Create(nil);

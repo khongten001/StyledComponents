@@ -31,7 +31,7 @@ td{
 </style>
 <h1>Delphi VCL StyledComponents <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg" alt="License"/></a></h1>
 <h2>Components similar to Delphi VCL Buttons, Panels, Toolbar, DbNavigator, BindNavigator, ButtonGroup and CategoryButtons with Custom Graphic Styles, and an advanced, full-customizable TaskDialog, also with animations!</h2>
-<h3>Actual official version: 4.1.1</h3>
+<h3>Actual official version: 4.2.0</h3>
 <hr />
 <h2>New Setup for Installation of Components</h2>
 <p>From 3.8.1 version a new &ldquo;Installer&rdquo; read-to-use is located in the Release area: <a href="https://github.com/EtheaDev/StyledComponents/releases/latest/download/StyledComponents_Setup.exe">Download the Installer</a>.</p>
@@ -332,7 +332,7 @@ TaskDialog -> StyledTaskDialog</p>
 <p><ins><em>Confirmation Dialog with custom font/size and English buttons</em></ins></p>
 <p><img src="./Images/ConfirmationDialog.jpg" alt="ConfirmationDialog.jpg"/></p>
 <p><ins><em>Warning Dialog with italians Captions in AcquaGraphite Style</em></ins></p>
-<p>To activate button captions is to change StyledComponents.inc file and activate {$Define ItaMessages}</p>
+<p>To change language of button captions (for example in italian) you must change StyledComponents.inc file and activate: <code>{$Define ItaMessages}</code></p>
 <p><img src="./Images/WarningDialog.jpg" alt="StyledButtonDemo.jpg"/></p>
 <p><ins><em>Error Dialog in Windows10 Vcl Style</em></ins></p>
 <p><img src="./Images/ErrorDialog.jpg" alt="StyledButtonDemo.jpg"/></p>
@@ -348,6 +348,12 @@ TaskDialog -> StyledTaskDialog</p>
 <p><img src="./Images/SupportingDelphi.jpg" alt="Delphi Support"/></p>
 <p>Related links: <a href="https://www.embarcadero.com">embarcadero.com</a> - <a href="https://learndelphi.org">learndelphi.org</a></p>
 <h3>RELEASE NOTES</h3>
+<p>26 Maj 2026 - version 4.2.0</p>
+<ul>
+<li>Fixed TaskDialog component in Delphi 13.1</li>
+<li>Fixed TStyledButton: now reacts to form.StyleName changes</li>
+<li>Fixed WM_PAINT cascade on style change (ApplyButtonStyle skip-invalidate when called from paint; all attribute groups assigned in one pass).</li>
+</ul>
 <p>22 Apr 2026 - version 4.1.1</p>
 <ul>
 <li>Fixed Owner of TaskDialog form</li>

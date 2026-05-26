@@ -2,7 +2,7 @@
 
 ## Components similar to Delphi VCL Buttons, Panels, Toolbar, DbNavigator, BindNavigator, ButtonGroup and CategoryButtons with Custom Graphic Styles, and an advanced, full-customizable TaskDialog, also with animations!
 
-### Actual official version: 4.1.1
+### Actual official version: 4.2.0
 
 ---
 ## New Setup for Installation of Components
@@ -366,7 +366,7 @@ The main form is useful to test every format / buttons and type of dialogs.
 
 ++*Warning Dialog with italians Captions in AcquaGraphite Style*++
 
-To activate button captions is to change StyledComponents.inc file and activate {$Define ItaMessages}
+To change language of button captions (for example in italian) you must change StyledComponents.inc file and activate: `{$Define ItaMessages}`
 
 ![StyledButtonDemo.jpg](./Images/WarningDialog.jpg)
 
@@ -397,6 +397,11 @@ If you are have Skia4Delphi installed, you can also try the AnimatedTaskDialogDe
 Related links: [embarcadero.com](https://www.embarcadero.com) - [learndelphi.org](https://learndelphi.org)
 
 ### RELEASE NOTES
+26 Maj 2026 - version 4.2.0
+- Fixed TaskDialog component in Delphi 13.1
+- Fixed TStyledButton: now reacts to form.StyleName changes
+- Fixed WM_PAINT cascade on style change (ApplyButtonStyle skip-invalidate when called from paint; all attribute groups assigned in one pass).
+
 22 Apr 2026 - version 4.1.1
 - Fixed Owner of TaskDialog form
 - Fixed sound for TaskMessageDlg using mtConfirmation
